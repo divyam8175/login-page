@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .login-form {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .dashboard {
+            display: none;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div class="dashboard">
+            <h2>Dashboard</h2>
+            <p>Welcome, <span id="loggedInUser"></span>!</p>
+            <h3>Share Your Project</h3>
+            <form id="projectForm">
+                <label for="projectName">Project Name:</label>
+                <input type="text" id="projectName" required><br><br>
+                <label for="projectDescription">Project Description:</label>
+                <textarea id="projectDescription" rows="4" required></textarea><br><br>
+                <button type="submit">Share</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code goes here
+        const loginForm = document.getElementById('loginForm');
+        const dashboard = document.querySelector('.dashboard');
+        const loggedInUser = document.getElementById('loggedInUser');
+        const projectForm = document.getElementById('projectForm');
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            loggedInUser.textContent = username;
+            loginForm.style.display = 'none';
+            dashboard.style.display = 'block';
+        });
+
+        projectForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Handle project submission (this is just a frontend example)
+            alert('Project submitted!'); // You would send the data to a server in a real application
+        });
+    </script>
+</body>
+</html>
