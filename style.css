@@ -17,11 +17,11 @@ body {
 }
 
 header {
-	height: 90vh;
+	height: vh;
 	/* background: #000; */
 }
 .black {
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 nav {
 	padding-top: 20px;
@@ -113,7 +113,7 @@ a, button {
 	text-align: center;
 }
 .head-container {
-	margin-top: 245px;
+	margin-top: 250px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
